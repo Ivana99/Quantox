@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <script>
+        function change(){
+
+        }
+    </script>
+    <style>
+        hr{
+            width: 10px;
+        }
+        #widget{
+            width: 500px;
+            height: 500px;
+            border-style: solid;
+            border-color: black;
+        }
+
+    </style>
+</head>
+<body>
+
+<form>
+    <input type="button" value="Monday   22℃" onclick=""><br>
+    <hr>
+    <input type="button" value="Tuesday   14℃" onclick=""><br>
+    <hr>
+    <input type="button" value="Wednesday   17℃" onclick=""><br>
+    <hr>
+    <input type="button" value="Thursday  19℃" onclick=""><br>
+    <hr>
+    <input type="button" value="Friday   21℃" onclick=""><br>
+    <hr>
+    <input type="button" value="Saturday   25℃" onclick=""><br>
+    <hr>
+    <input type="button" value="Sunday   20℃" onclick=""><br>
+    <hr>
+</form>
+<div content="box" id="widget">
+
+</div>
+</body>
+</html>
