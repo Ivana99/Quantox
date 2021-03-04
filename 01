@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <script>
+        function change(id) {
+            switch (id) {
+                case 0:
+                    document.getElementById("widget").innerHTML = weatherData.days[0] + day + " " + " " + windDirection + " " + windSpeed + " " + type + " ";
+                    break;
+                case 1:
+                    document.getElementById("widget").innerHTML = weatherData.days[1] + day + " " + " " + windDirection + " " + windSpeed + " " + type + " ";
+                    break;
+                case 2:
+                    document.getElementById("widget").innerHTML = weatherData.days[2] + day + " " + " " + windDirection + " " + windSpeed + " " + type + " ";
+                    break;
+                case 3:
+                    document.getElementById("widget").innerHTML = weatherData.days[3] + day + " " + " " + windDirection + " " + windSpeed + " " + type + " ";
+                    break;
+                case 4:
+                    document.getElementById("widget").innerHTML = weatherData.days[4] + day + " " + " " + windDirection + " " + windSpeed + " " + type + " ";
+                    break;
+                case 5:
+                    document.getElementById("widget").innerHTML = weatherData.days[5] + day + " " + " " + windDirection + " " + windSpeed + " " + type + " ";
+                    break;
+                case 6:
+                    document.getElementById("widget").innerHTML = weatherData.days[6] + day + " " + " " + windDirection + " " + windSpeed + " " + type + " ";
+                    break;
+            }
+        }
+
+        const weatherData = {
+            tempUnit: 'C',
+            windSpeedUnit: 'm/s',
+            days: [
+                [day= 'Monday', temp= 22, windDirection= '↙', windSpeed= 10 , type= 'sunny'],
+                [day= 'Tuesday', temp= 14, windDirection= '↖', windSpeed= 1 , type= 'sunny'],
+                [day= 'Wednesday', temp= 17, windDirection= '↘', windSpeed= 3 , type= 'cloudy'],
+                [day= 'Thursday', temp= 19, windDirection= '↘', windSpeed= 5 , type= 'rainy'],
+                [day= 'Friday', temp= 21, windDirection= '↖', windSpeed= 8 , type= 'cloudy'],
+                [day= 'Saturday', temp= 25, windDirection= '↙', windSpeed= 12 , type= 'sunny'],
+                [day= 'Sunday', temp= 20, windDirection= '↙', windSpeed= 14 , type= 'sunny']
+
+            ]
+
+        }
+    </script>
+    <style>
+        hr{
+            width: 10px;
+        }
+        #widget{
+            width: 500px;
+            height: 500px;
+            border-style: solid;
+            border-color: black;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+<form>
+    <input type="button" id="one" value="Monday 22℃" onclick="change(0)"><br>
+    <hr>
+    <input type="button" id="two" value="Tuesday   14℃" onclick="change(1)"><br>
+    <hr>
+    <input type="button" id="three" value="Wednesday   17℃" onclick="change(2)"><br>
+    <hr>
+    <input type="button" id="four" value="Thursday  19℃" onclick="change(3)"><br>
+    <hr>
+    <input type="button" id="five" value="Friday   21℃" onclick="change(4)"><br>
+    <hr>
+    <input type="button" id="sixth" value="Saturday   25℃" onclick="change(5)"><br>
+    <hr>
+    <input type="button" id="seven" value="Sunday   20℃" onclick="change(6)"><br>
+    <hr>
+</form>
+<div content="box" id="widget">
+
+</div>
+</body>
+</html>
