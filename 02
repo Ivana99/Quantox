@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <script>
+        function change1(id) {
+            switch (id) {
+                case 0:
+                    document.getElementById("widget").innerHTML = weatherData1.days[0] + day + " " + " " + windDirection + " " + windSpeed + " " + type + " ";
+                    break;
+                case 1:
+                    document.getElementById("widget").innerHTML = weatherData1.days[1] + day + " " + " " + windDirection + " " + windSpeed + " " + type + " ";
+                    break;
+                case 2:
+                    document.getElementById("widget").innerHTML = weatherData1.days[2] + day + " " + " " + windDirection + " " + windSpeed + " " + type + " ";
+                    break;
+                case 3:
+                    document.getElementById("widget").innerHTML = weatherData1.days[3] + day + " " + " " + windDirection + " " + windSpeed + " " + type + " ";
+                    break;
+                case 4:
+                    document.getElementById("widget").innerHTML = weatherData1.days[4] + day + " " + " " + windDirection + " " + windSpeed + " " + type + " ";
+                    break;
+                case 5:
+                    document.getElementById("widget").innerHTML = weatherData1.days[5] + day + " " + " " + windDirection + " " + windSpeed + " " + type + " ";
+                    break;
+                case 6:
+                    document.getElementById("widget").innerHTML = weatherData1.days[6] + day + " " + " " + windDirection + " " + windSpeed + " " + type + " ";
+                    break;
+            }
+        }
+
+        const weatherData1 = {
+            tempUnit: 'C',
+            windSpeedUnit: 'm/s',
+            days: [
+                [day= 'Monday', temp= 22, windDirection= '↙', windSpeed= 10 , type= 'sunny'],
+                [day= 'Tuesday', temp= 14, windDirection= '↖', windSpeed= 1 , type= 'sunny'],
+                [day= 'Wednesday', temp= 17, windDirection= '↘', windSpeed= 3 , type= 'cloudy'],
+                [day= 'Thursday', temp= 19, windDirection= '↘', windSpeed= 5 , type= 'rainy'],
+                [day= 'Friday', temp= 21, windDirection= '↖', windSpeed= 8 , type= 'cloudy'],
+                [day= 'Saturday', temp= 25, windDirection= '↙', windSpeed= 12 , type= 'sunny'],
+                [day= 'Sunday', temp= 20, windDirection= '↙', windSpeed= 14 , type= 'sunny']
+
+            ]
+
+        }
+
+        function temperatureConverter(valNum) {
+            valNum = parseFloat(valNum);
+            document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
+        }
+        function weatherUnitConverter(valNum) {
+            valNum = parseFloat(valNum);
+            document.getElementById("outputKm/h").innerHTML=(valNum*3.6);
+        }
+    </script>
+    <style>
+        body{
+            background-color: beige;
+            font-family: "Calibri Light";
+        }
+        .input{
+            background-color: aqua;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        hr{
+            width: 10px;
+        }
+        #widget{
+            width: 200px;
+            height: 200px;
+            border-style: solid;
+            border-color: black;
+            font-size: 16px;
+        }
+        .convert1{
+            float: right;
+            border-style: solid;
+            border-color: aqua;
+        }
+        .convert2{
+            float: right;
+            border-color: aqua;
+            border-style: solid;
+        }
+
+    </style>
+</head>
+<body>
+<div class="convert1">
+    <h2>Temperature Converter</h2>
+    <p>
+        <label>Fahrenheit</label>
+        <input id="inputFahrenheit" type="number" placeholder="Fahrenheit" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+    </p>
+    <p>Celcius: <span id="outputCelcius"></span></p>
+</div>
+<div class="convert2">
+    <h2>Wind speed Converter</h2>
+    <p>
+        <label>m/s</label>
+        <input id="inputM/s" type="number" placeholder="m/s" oninput="weatherUnitConverter(this.value)" onchange="weatherUnitConverter(this.value)">
+    </p>
+    <p>km/h: <span id="outputKm/h"></span></p>
+</div>
+<form class="input">
+    <input type="button" id="one" value="Monday 22℃" onclick="change1(0)"><br>
+    <hr>
+    <input type="button" id="two" value="Tuesday   14℃" onclick="change1(1)"><br>
+    <hr>
+    <input type="button" id="three" value="Wednesday   17℃" onclick="change1(2)"><br>
+    <hr>
+    <input type="button" id="four" value="Thursday  19℃" onclick="change1(3)"><br>
+    <hr>
+    <input type="button" id="five" value="Friday   21℃" onclick="change1(4)"><br>
+    <hr>
+    <input type="button" id="sixth" value="Saturday   25℃" onclick="change1(5)"><br>
+    <hr>
+    <input type="button" id="seven" value="Sunday   20℃" onclick="change1(6)"><br>
+    <hr>
+</form>
+<div content="box" id="widget">
+
+</div>
+</body>
+</html>
